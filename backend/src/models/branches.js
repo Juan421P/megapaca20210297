@@ -7,10 +7,10 @@ const schema = new Schema({
         type: String
     },
     schedule: {
-        type: Number
+        type: String
     },
     isActive: {
-        type: Number
+        type: Boolean
     }
 }, {
     timestamps: true,
