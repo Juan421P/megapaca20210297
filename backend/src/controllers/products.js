@@ -1,12 +1,8 @@
 import model from '../models/products.js';
 const controller = {
-  get: async (res) => {
+  get: async (req, res) => {
     const products = await model.find();
     res.json(products);
-  },
-  get: async (req, res) => {
-	const product = await model.findById(req.params.id);
-	res.json(product);
   },
   post: async (req, res) => {
 	const {

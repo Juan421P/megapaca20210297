@@ -1,5 +1,5 @@
 import express from 'express';
-import controller from '../controllers/branches.js';
+import controller from '../controllers/reviews.js';
 const router = express.Router();
 router.route('/')
 .get(controller.get)

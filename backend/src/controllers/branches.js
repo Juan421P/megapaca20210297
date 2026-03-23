@@ -1,12 +1,8 @@
 import model from '../models/branches.js';
 const controller = {
-  get: async (res) => {
+  get: async (req, res) => {
     const branches = await model.find();
     res.json(branches);
-  },
-  get: async (req, res) => {
-    const branch = await model.findById(req.params.id);
-    res.json(branch);
   },
   post: async (req, res) => {
     const {
