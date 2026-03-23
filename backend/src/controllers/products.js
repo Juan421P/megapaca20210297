@@ -1,9 +1,12 @@
-import products from "../models/products.js";
-import model from "../models/products.js";
+import model from '../models/products.js';
 const controller = {
-  get: async (req, res) => {
+  get: async (res) => {
     const products = await model.find();
     res.json(products);
+  },
+  get: async (req, res) => {
+	const product = await model.findById(req.params.id);
+	res.json(product);
   },
   post: async (req, res) => {
 	const {
@@ -12,7 +15,7 @@ const controller = {
 	const product = new model({
 		name, description, price, stock
 	});
-	await products.save();
+	await product.save();
 	res.json({
 		message: 'product saved'
 	});

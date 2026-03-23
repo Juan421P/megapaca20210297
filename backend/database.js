@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-mongoose.connect('mongodb://localhost:27017/megapacadb');
+import { config } from './config.js';
+mongoose.connect(config.db.URI);
 const connection= mongoose.connection;
 connection.once('open', () => {
     console.log('db is connected');
