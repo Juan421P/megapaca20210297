@@ -1,9 +1,9 @@
 import { Schema, model } from 'mongoose';
 const schema = new Schema({
-    name:{
+    name: {
         type: String
     },
-    lastName:{
+    lastname: {
         type: String
     },
     salary: {
@@ -24,6 +24,9 @@ const schema = new Schema({
     branch: {
         type: Schema.Types.ObjectId,
         ref: "branches"
+    },
+    isVerified: {
+        type: Boolean
     }
 }, {
     timestamps: true,

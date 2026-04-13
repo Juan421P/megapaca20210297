@@ -1,15 +1,24 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import products from './src/routes/products.js'
 import branches from './src/routes/branches.js';
 import employees from './src/routes/employees.js';
+import registerEmployee from './src/routes/registerEmployee.js';
 import reviews from './src/routes/reviews.js';
 import clients from './src/routes/clients.js';
+import registerClient from './src/routes/registerClient.js';
+import admins from './src/routes/admins.js';
+import registerAdmin from './src/routes/registerAdmin.js';
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use('/api/products', products);
 app.use('/api/branches', branches);
 app.use('/api/employees', employees);
+app.use('/api/registerEmployee', registerEmployee);
 app.use('/api/reviews', reviews);
 app.use('/api/clients', clients);
-app.use('/api/registerClient');
+app.use('/api/registerClient', registerClient);
+app.use('/api/admins', admins);
+app.use('/api/registerAdmin', registerAdmin);
 export default app;
